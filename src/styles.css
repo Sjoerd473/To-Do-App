@@ -1,4 +1,92 @@
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+* {
+  margin: 0;
+  list-style: none;
+}
+
+
 body {
-    background-color: rebeccapurple;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  
+  height: 100vh;
+  --fonts: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: var(--fonts);
+  display:grid;
+  grid-template-columns: 0.15fr 1fr;;
+}
+
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+
+#root,
+#__next {
+  isolation: isolate;
+}
+/* 
+  *{
+    border:1px solid rebeccapurple
+  } */
+
+  .sidebar, .sidebar ul{
+    display:flex;
+    flex-direction: column;
+    
+  }
+  .sidebar {
+    gap:3rem;
+  }
+
+  .sidebar ul{
+    gap: 1rem;
+  }
+
+  .main{
+    display:grid;
+    grid-template-rows: 0.1fr 1fr;
+  }
+
+  .project{
+    display:grid;
+    grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
+    gap:2rem;
+  }
+
+  svg{
+    width:2rem;
+    display:inline;
   }

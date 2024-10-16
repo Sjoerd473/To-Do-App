@@ -37,19 +37,27 @@ function ProjectManager() {
         let project = document.querySelector('.tasks')
         project.replaceChildren()
         
-        activeProject.tasks.forEach((element) => {
+        activeProject.tasks.forEach((element, index) => {
         
-        let div1 = DOMgen.makeDiv('subsection')
+        
         let div2 = DOMgen.makeDiv('task');
         let div3 = DOMgen.makeDiv()
         let p1 = DOMgen.makePara(element.title)
-        let p2 = DOMgen.makePara(element.date)
+        let p2 = DOMgen.makePara(element.dueDate)
         let btn = DOMgen.makeButton('This will be a checkbox', 'checkbox')
+        let btn2 = DOMgen.makeButton('Delete Task', 'delete-button');
+        btn2.addEventListener('click', () =>{
+            
+            activeProject.tasks.splice(index,1)
+            taskAdder()
+
+        })
         
-        project.appendChild(div1)
-        div1.appendChild(div2)
+        project.appendChild(div2)
+        
         div2.appendChild(btn)
         div2.appendChild(div3)
+        div2.appendChild(btn2)
         div3.appendChild(p1)
         div3.appendChild(p2)
 

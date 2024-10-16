@@ -15,10 +15,10 @@ function DOMMaker(){
         return el
 }
 
-    const makeHeader = (string, group) =>{
+    const makeHeader = (string) =>{
         let el = document.createElement('h1');
         el.textContent = string;
-        el.classList.add(group);
+        // el.classList.add(group);
         return el
 }  
     const makeButton  = (string, group) =>{

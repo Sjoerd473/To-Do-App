@@ -1,15 +1,17 @@
+import {Project} from "./project.js"
+
 function DOMMaker(){
-    const makeDiv = (string, group) =>{
+    const makeDiv = (group = undefined) =>{
         let el = document.createElement('div');
-        el.textContent = string;
+       
         el.classList.add(group);
         return el
     }
 
-    const makePara  = (string, group) =>{
+    const makePara  = (string) =>{
         let el = document.createElement('p');
         el.textContent = string;
-        el.classList.add(group);
+        // el.classList.add(group);
         return el
 }
 
@@ -36,5 +38,13 @@ const makeListItem = (string, group) =>{
 return {makeDiv, makePara, makeHeader, makeButton, makeListItem}
 
 }
+
+// function BtnEvents(){
+//     const projectModal () =>{
+
+//     }
+// }
+
+ 
 
 export const DOMgen = DOMMaker();
